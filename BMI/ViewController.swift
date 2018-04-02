@@ -44,7 +44,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var kennkobaImage = UIImage(named:"kennkoba")!
     
     @IBAction func calculation(_ sender: Any) {
-        
+        yourBMIResult.isHidden = false  //あなたのBMIはを表示
+        correctWeight.isHidden = false  //あなたの適正体重はを表示
         //ここにchangeボタンが押された時の処理
         let weight = Double(writeWeight.text!)!
         let height = Double(writeHeight.text!)!
@@ -197,6 +198,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
         self.writeHeight.keyboardType = UIKeyboardType.numberPad
         
         calculationButton.isHidden = true  //計算ボタン非表示
+        yourBMIResult.isHidden = true  
+        correctWeight.isHidden = true
         
         // 入力値が変更された時に呼ばれる通知を登録
         NotificationCenter.default.addObserver(
